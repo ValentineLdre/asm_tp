@@ -23,10 +23,6 @@ _start:
     cmp al, '2'
     jne erreur
 
-    mov al, [saisie_utilisateur + 2]
-    cmp al, ''
-    jne erreur
-
     mov rax, 1
     mov rdi, 1
     mov rsi, number
