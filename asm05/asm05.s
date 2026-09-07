@@ -1,5 +1,5 @@
 section .data
-    saisie_texte db 100 dup(0)
+    saisie_texte db "Hello, Universe!"
 
 section .text
 global _start
