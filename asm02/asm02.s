@@ -1,8 +1,8 @@
 section .bss
-    saisie_utilisateur resb 6
+    saisie_utilisateur resb 2
 
 section .data
-number db "1337"
+number db "1337", 10
 
 section .text
 global _start
@@ -12,7 +12,7 @@ _start:
     mov rax, 0
     mov rdi, 0
     mov rsi, saisie_utilisateur
-    mov rdx, 6
+    mov rdx, 2
     syscall
 
     mov al, [saisie_utilisateur]
