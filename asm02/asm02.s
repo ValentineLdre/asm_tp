@@ -23,6 +23,42 @@ _start:
     cmp al, '2'
     jne erreur
 
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '1'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '2'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '3'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '4'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '5'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '6'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '7'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '8'
+    je erreur
+
+    mov al, [saisie_utilisateur + 2]
+    cmp al, '9'
+    je erreur
+
     mov rax, 1
     mov rdi, 1
     mov rsi, number
