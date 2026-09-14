@@ -9,7 +9,6 @@ section .text
 global _start
 
 _start:
-
     mov rax, 0
     mov rdi, 0
     mov rsi, saisie_utilisateur
@@ -38,10 +37,6 @@ _start:
     mov rdi, 0
     syscall
 
-erreur:
-    mov rax, 60
-    mov rdi, 1
-    syscall
 erreur:
     mov rax, 60
     mov rdi, 1
