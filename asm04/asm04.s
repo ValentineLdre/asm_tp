@@ -1,22 +1,29 @@
 section .bss
-    buffer resb 2
+    valeur resb 3
 
 section .text
 global _start
 _start:
     mov rax, 0
     mov rdi, 0
-    mov rsi, buffer
-    mov rdx, 2
+    mov rsi, valeur
+    mov rdx, 3
     syscall
 
-    mov rsi, buffer
-    mov al, [rsi]
+    mov al, [valeur]
+    cmp al, '-'
+    je negatif
 
+    jmp check_valeur
+
+negatif:
+    mov al, [valeur + 1]
+
+check_valeur:
     cmp al, '0'
-    jb  not_a_number
+    jb not_a_number
     cmp al, '9'
-    ja  not_a_number
+    ja not_a_number
 
     cmp al, '0'
     je even
@@ -39,7 +46,9 @@ _start:
     cmp al, '9'
     je odd
 
-even:
+    jmp not_a_number
+
+    even:
     mov rax, 60
     mov rdi, 0
     syscall
