@@ -7,7 +7,7 @@ _start:
 
     mov rax, [rsp]
     cmp rax, 2
-    jl erreur
+    jne erreur
 
     mov rsi, [rsp + 16]
 
