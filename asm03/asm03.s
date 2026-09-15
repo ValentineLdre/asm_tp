@@ -4,6 +4,11 @@ number db "1337", 10
 section .text
 global _start
 _start:
+
+    mov rax, [rsp]
+    cmp rax, 2
+    jl erreur
+
     mov rsi, [rsp + 16]
 
     mov al, [rsi]
