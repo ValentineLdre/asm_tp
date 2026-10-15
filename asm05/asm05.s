@@ -3,13 +3,17 @@ global _start
 
 
 _start:
+    mov rax, [rsp]
+    cmp rax, 2
+    jne erreur
+    
     mov rsi, [rsp + 16]
     mov rcx, 0
 
     
 boucle_longueur:
-    cmp byte [rsi+rcx], 0
-    je  fin_longueur
+    cmp byte [rsi + rcx], 0
+    je fin_longueur
     inc rcx
     jmp boucle_longueur
 
@@ -22,4 +26,9 @@ fin_longueur:
 
     mov rax, 60
     mov rdi, 0
+    syscall
+
+erreur:
+    mov rax, 60
+    mov rdi, 2
     syscall
