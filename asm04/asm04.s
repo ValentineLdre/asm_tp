@@ -48,7 +48,7 @@ check_valeur:
 
     jmp not_a_number
 
-    even:
+even:
     mov rax, 60
     mov rdi, 0
     syscall
