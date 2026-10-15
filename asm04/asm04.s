@@ -1,5 +1,5 @@
 section .bss
-    valeur resb 3
+    valeur resb 21
 
 section .text
 global _start
