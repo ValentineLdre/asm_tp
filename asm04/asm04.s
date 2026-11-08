@@ -1,4 +1,3 @@
-
 section .bss
     caractere resb 1
 
