@@ -21,15 +21,9 @@ _start:
 
 verifier_fin_ligne:
     cmp byte [rsi + r14 - 1], 10
-    jne verifier_retour_chariot
-    dec r14
-
-verifier_retour_chariot:
-    cmp r14, 0
-    je sortie_nombre_invalide
-    cmp byte [rsi + r14 - 1], 13
     jne convertir_nombre
     dec r14
+    jmp convertir_nombre
 
 convertir_nombre:
     mov rdi, rsi
